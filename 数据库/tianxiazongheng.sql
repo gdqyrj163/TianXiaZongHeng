@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-10-25 11:41:07
+Date: 2018-10-29 09:10:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -110,7 +110,6 @@ CREATE TABLE `map` (
   `userid` bigint(20) NOT NULL,
   `longtude` float(10,2) NOT NULL,
   `latitude` float(10,2) NOT NULL,
-  `accuracy` int(5) NOT NULL,
   `time` time NOT NULL,
   PRIMARY KEY (`userid`),
   CONSTRAINT `FK_Reference_1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
@@ -143,17 +142,16 @@ CREATE TABLE `privatechat` (
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `userid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `userid` bigint(20) NOT NULL,
   `username` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `password` varchar(16) NOT NULL,
-  `address` varchar(50) NOT NULL DEFAULT 'NoAddress',
-  `image` varchar(100) NOT NULL DEFAULT 'default.jpg',
+  `address` varchar(50) NOT NULL,
+  `image` varchar(100) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=123459 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO user VALUES ('123456', 'admin', 'admin@admin.com', 'admin', 'admin', 'default');
-INSERT INTO user VALUES ('123458', '88', '888', '88', 'NoAddress', 'default.jpg');
