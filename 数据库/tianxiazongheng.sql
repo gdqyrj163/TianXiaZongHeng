@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-10-29 09:10:19
+Date: 2018-10-29 11:10:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -142,14 +142,14 @@ CREATE TABLE `privatechat` (
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `userid` bigint(20) NOT NULL,
+  `userid` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `password` varchar(16) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `image` varchar(100) NOT NULL,
+  `address` varchar(50) NOT NULL DEFAULT 'noAddress',
+  `image` varchar(100) NOT NULL DEFAULT 'default.jpg',
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=123457 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
