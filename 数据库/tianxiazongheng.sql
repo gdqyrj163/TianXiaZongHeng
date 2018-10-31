@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-10-31 15:14:18
+Date: 2018-10-31 15:25:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -103,10 +103,10 @@ CREATE TABLE `identification` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `map`
+-- Table structure for `maps`
 -- ----------------------------
-DROP TABLE IF EXISTS `map`;
-CREATE TABLE `map` (
+DROP TABLE IF EXISTS `maps`;
+CREATE TABLE `maps` (
   `userid` bigint(20) NOT NULL,
   `longtude` float(10,2) NOT NULL,
   `latitude` float(10,2) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE `map` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of map
+-- Records of maps
 -- ----------------------------
 
 -- ----------------------------
