@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-10-29 11:10:21
+Date: 2018-10-31 15:14:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -110,7 +110,7 @@ CREATE TABLE `map` (
   `userid` bigint(20) NOT NULL,
   `longtude` float(10,2) NOT NULL,
   `latitude` float(10,2) NOT NULL,
-  `time` time NOT NULL,
+  `time` varchar(30) NOT NULL,
   PRIMARY KEY (`userid`),
   CONSTRAINT `FK_Reference_1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
