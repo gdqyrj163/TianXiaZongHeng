@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-01 09:10:15
+Date: 2018-11-01 11:41:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,8 +108,8 @@ CREATE TABLE `identification` (
 DROP TABLE IF EXISTS `maps`;
 CREATE TABLE `maps` (
   `userid` bigint(20) NOT NULL,
-  `longtude` float(10,2) NOT NULL,
-  `latitude` float(10,2) NOT NULL,
+  `longtude` float(10,6) NOT NULL,
+  `latitude` float(10,6) NOT NULL,
   `time` varchar(30) NOT NULL,
   PRIMARY KEY (`userid`),
   CONSTRAINT `FK_Reference_1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
