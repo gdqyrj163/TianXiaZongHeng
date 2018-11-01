@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-10-31 15:25:48
+Date: 2018-11-01 09:10:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS `group`;
 CREATE TABLE `group` (
   `groupid` bigint(20) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `intoduce` varchar(100) NOT NULL,
+  `introduce` varchar(100) NOT NULL,
   `master` bigint(20) NOT NULL,
   `image` varchar(50) NOT NULL,
   PRIMARY KEY (`groupid`),
