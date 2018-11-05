@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-05 09:08:21
+Date: 2018-11-05 11:25:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,13 +57,14 @@ CREATE TABLE `groupchat` (
 DROP TABLE IF EXISTS `groupnotice`;
 CREATE TABLE `groupnotice` (
   `userid` bigint(20) NOT NULL,
-  `noticeid` bigint(20) NOT NULL,
+  `noticeid` bigint(20) NOT NULL AUTO_INCREMENT,
   `type` tinyint(1) NOT NULL,
   `operation` tinyint(1) NOT NULL,
   `source` varchar(20) NOT NULL,
   `result` tinyint(1) NOT NULL,
-  PRIMARY KEY (`userid`,`noticeid`),
-  CONSTRAINT `FK_Reference_4` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
+  PRIMARY KEY (`noticeid`),
+  KEY `userid` (`userid`),
+  CONSTRAINT `groupnotice_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
