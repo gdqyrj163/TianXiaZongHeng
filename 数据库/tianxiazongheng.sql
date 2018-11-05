@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-01 11:41:25
+Date: 2018-11-05 09:08:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -19,11 +19,11 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `group`;
 CREATE TABLE `group` (
-  `groupid` bigint(20) NOT NULL,
+  `groupid` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `introduce` varchar(100) NOT NULL,
   `master` bigint(20) NOT NULL,
-  `image` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL DEFAULT 'default.jpg',
   PRIMARY KEY (`groupid`),
   KEY `master` (`master`),
   CONSTRAINT `group_ibfk_1` FOREIGN KEY (`master`) REFERENCES `user` (`userid`)
