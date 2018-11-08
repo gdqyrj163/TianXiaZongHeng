@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-07 14:04:20
+Date: 2018-11-07 20:29:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -61,6 +61,7 @@ CREATE TABLE `groupnotice` (
   `type` tinyint(1) NOT NULL,
   `operation` tinyint(1) NOT NULL,
   `source` varchar(20) NOT NULL,
+  `target` varchar(20) NOT NULL,
   `result` tinyint(1) NOT NULL,
   `time` varchar(20) NOT NULL,
   PRIMARY KEY (`noticeid`),
