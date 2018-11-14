@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-08 10:15:01
+Date: 2018-11-14 15:47:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,7 +23,7 @@ CREATE TABLE `group` (
   `name` varchar(20) NOT NULL,
   `introduce` varchar(100) NOT NULL,
   `master` bigint(20) NOT NULL,
-  `image` varchar(50) NOT NULL DEFAULT 'default.jpg',
+  `image` mediumtext NOT NULL,
   PRIMARY KEY (`groupid`),
   KEY `master` (`master`),
   CONSTRAINT `group_ibfk_1` FOREIGN KEY (`master`) REFERENCES `user` (`userid`)
@@ -150,7 +150,7 @@ CREATE TABLE `user` (
   `email` varchar(20) NOT NULL,
   `password` varchar(16) NOT NULL,
   `address` varchar(50) NOT NULL DEFAULT 'noAddress',
-  `image` varchar(100) NOT NULL DEFAULT 'default.jpg',
+  `image` mediumtext NOT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=123457 DEFAULT CHARSET=utf8;
 
