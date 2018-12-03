@@ -10,10 +10,25 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-11-14 15:53:57
+Date: 2018-12-03 11:11:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `checkcode`
+-- ----------------------------
+DROP TABLE IF EXISTS `checkcode`;
+CREATE TABLE `checkcode` (
+  `email` varchar(50) NOT NULL,
+  `checkCode` varchar(6) NOT NULL,
+  `time` mediumtext NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of checkcode
+-- ----------------------------
+
 -- ----------------------------
 -- Table structure for `group`
 -- ----------------------------
@@ -40,8 +55,7 @@ DROP TABLE IF EXISTS `groupchat`;
 CREATE TABLE `groupchat` (
   `userid` bigint(20) NOT NULL,
   `groupid` bigint(20) NOT NULL,
-  `content` varchar(100) NOT NULL,
-  `lasttime` time NOT NULL,
+  `lasttime` mediumtext NOT NULL,
   PRIMARY KEY (`userid`),
   KEY `groupid` (`groupid`),
   CONSTRAINT `FK_Reference_6` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
@@ -120,24 +134,6 @@ CREATE TABLE `maps` (
 
 -- ----------------------------
 -- Records of maps
--- ----------------------------
-
--- ----------------------------
--- Table structure for `privatechat`
--- ----------------------------
-DROP TABLE IF EXISTS `privatechat`;
-CREATE TABLE `privatechat` (
-  `aimid` bigint(20) NOT NULL,
-  `userid` bigint(20) NOT NULL,
-  `content` varchar(100) NOT NULL,
-  `lasttime` time NOT NULL,
-  PRIMARY KEY (`aimid`),
-  KEY `FK_Reference_5` (`userid`),
-  CONSTRAINT `FK_Reference_5` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of privatechat
 -- ----------------------------
 
 -- ----------------------------
